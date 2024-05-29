@@ -1,4 +1,5 @@
 import { getData } from "@/services/products/page";
+import Image from "next/image";
 import Link from "next/link";
 
 type ProductPage = { params: { slug: string[] } };
@@ -18,10 +19,13 @@ const DetailProductPage = async (props: ProductPage) => {
             key={product.id}
             className="w-10/12 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5"
           >
-            <img
+            <Image
               className="p-8 rounded-t-lg object-cover h-96 w-full"
               src={product.image}
               alt={product.name}
+              width={500}
+              height={500}
+              loading="lazy"
             />
             <div className="px-5 pb-5">
               <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white truncate">

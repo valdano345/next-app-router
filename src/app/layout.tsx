@@ -1,14 +1,15 @@
 "use client";
 
 import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Navbar from "./navbar";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 const disableNavbar = ["/login", "/register"];
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   const pathname = usePathname();
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <SessionProvider>
           {!disableNavbar.includes(pathname) && <Navbar />}
           {children}
