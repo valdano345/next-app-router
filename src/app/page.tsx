@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon/icon.png",
   },
-  openGraph:{
+  openGraph: {
     title: "Home - Valdano Esnaidar",
-  }
+  },
 };
 
 export default function Home() {
